@@ -1,5 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation, Scrollbar, A11y } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,6 +13,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 const photos = [
+  require("../images/12.jpg"),
+  require("../images/11.jpg"),
   require("../images/1.jpg"),
   require("../images/2.jpg"),
   require("../images/3.jpg"),
@@ -22,7 +30,9 @@ const photos = [
 const PhotoSwiper = () => {
   return (
     <div className="relative bg-gradient-to-r from-purple-200 via-pink-200 to-red-200 p-10 text-center min-h-screen animate-fade-in">
-      <h2 className="text-3xl font-extrabold mb-4 text-slate-600 animate-slide-in-down">Your Beauty Gallery</h2>
+      <h2 className="text-3xl font-extrabold mb-4 text-slate-600 animate-slide-in-down">
+        Your <span className="text-purple-500">Beauty</span> Gallery
+      </h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]}
         spaceBetween={10}
@@ -46,7 +56,11 @@ const PhotoSwiper = () => {
       >
         {photos.map((photo, index) => (
           <SwiperSlide key={index} className="animate-zoom-in">
-            <img src={photo} alt="" className="max-h-[500px] max-w-[440px] rounded-lg" />
+            <img
+              src={photo}
+              alt=""
+              className="max-h-[500px] max-w-[440px] rounded-lg"
+            />
           </SwiperSlide>
         ))}
         <div className="inset-0 flex justify-between items-center px-5 z-10">
@@ -58,7 +72,11 @@ const PhotoSwiper = () => {
           </div>
         </div>
       </Swiper>
-      <h4 className="font-semibold text-xl mt-4 text-slate-600 animate-slide-in-up">Of course, this gallery is not enough to include all your beauty</h4>
+      <h4 className="font-semibold text-xl mt-4 text-slate-600 animate-slide-in-up">
+        Of course, this gallery is{" "}
+        <span className="text-purple-500">not enough</span> to include all your{" "}
+        <span className="text-purple-500">beauty</span>
+      </h4>
     </div>
   );
 };
