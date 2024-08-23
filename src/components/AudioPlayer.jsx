@@ -28,13 +28,13 @@ const AudioPlayer = () => {
         Your browser does not support the audio element.
       </audio>
       {!isPlaying && (
-        <button onClick={playAudio} className="p-2 bg-gray-800 text-white rounded-full">
-          <FaPlay size={25} />
+        <button onClick={playAudio} className="p-2 bg-gray-800 text-white rounded-full text-center">
+          <FaPlay size={20} />
         </button>
       )}
       {isPlaying && (
-        <button onClick={toggleMute} className="p-2 bg-gray-800 text-white rounded-full">
-          {isMuted ? <FaVolumeMute size={25} /> : <FaVolumeUp size={25} />}
+        <button onClick={toggleMute} className="p-2 bg-gray-800 text-white rounded-full text-center">
+          {isMuted ? <FaVolumeMute size={20} /> : <FaVolumeUp size={20} />}
         </button>
       )}
     </div>
